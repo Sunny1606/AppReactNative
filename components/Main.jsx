@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 4,
     elevation: 10,
-    backgroundColor: "#9BEC00",
+    backgroundColor: "white",
     width: 200,
     margin: 110,
   },
@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     fontWeight: "bold",
     letterSpacing: 0.25,
-    color: "#059212",
+    color: "black",
   },
 });

@@ -21,9 +21,14 @@ export default function Home() {
   const navigation = useNavigation();
 
   const listData = [
-    { id: "1", title: "Opcion 1" },
-    { id: "2", title: "Opcion 2" },
-    { id: "3", title: "CERRAR" },
+    { id: "1", title: "Bodys" },
+    { id: "2", title: "Remeras" },
+    { id: "2", title: "Pantalones" },
+    { id: "2", title: "Shorts" },
+    { id: "2", title: "Buzos" },
+    { id: "2", title: "Conjuntos" },
+    { id: "2", title: "Accesorios" },
+    { id: "2", title: "Calzado" },
   ];
 
   return (
@@ -31,8 +36,12 @@ export default function Home() {
       <View style={styles.headerContainer}>
         <View>
           <TouchableOpacity onPress={() => setList(!isList)}>
-            <Ionicons style={styles.iconBars} name="options" size={29} color="black" />
-            
+            <Ionicons
+              style={styles.iconBars}
+              name="options"
+              size={29}
+              color="black"
+            />
           </TouchableOpacity>
           {isList && (
             <View style={styles.listContainer}>
@@ -74,6 +83,7 @@ export default function Home() {
           color="black"
         />
       </View>
+      
     </View>
   );
 }
@@ -129,22 +139,25 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: -1, height: 1 }, // Desplazamiento de la sombra
     textShadowRadius: 10, // Radio de la sombra
   },
-  listContainer:{
-    position: 'absolute', // Coloca la lista en una posición absoluta
+  listContainer: {
+    position: "absolute", // Coloca la lista en una posición absoluta
     top: 30, // Ajusta la posición vertical de la lista
     left: 0, // Ajusta la posición horizontal de la lista
-    backgroundColor: '#DCA47C',
+    backgroundColor: "#E4C59E",
     borderRadius: 5,
-    elevation: 2, // Para agregar una sombra en Android
-    width: 200,
-    maxHeight: 200,
+    elevation: 5, // Para agregar una sombra en Android
+    width: 250,
+    maxHeight: 450,
     marginTop: 20,
-    zIndex: 1,
+    zIndex: 10,
   },
-  listItem:{
+  listItem: {
     padding: 10,
   },
   listItemText: {
-    fontSize: 15,
+    fontSize: 17,
+    backgroundColor: "#AF8260",
+    padding: 5,
+    borderRadius: 5,
   },
 });

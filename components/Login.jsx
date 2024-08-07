@@ -9,7 +9,7 @@ import {
 import React from "react";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
-import AntDesign from '@expo/vector-icons/AntDesign';
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function Login() {
   const navigation = useNavigation();
@@ -24,6 +24,15 @@ export default function Login() {
           color="black"
         />
       </TouchableOpacity>
+      <View style={styles.conteinerTextWelcome}>
+        <AntDesign
+          style={styles.iconUser}
+          name="user"
+          size={24}
+          color="black"
+        />
+        <Text style={styles.textWelcome}>Bienvenido</Text>
+      </View>
       <TextInput style={styles.input} placeholder="Email" />
       <TouchableOpacity style={styles.button}>
         <Text style={styles.textC}>Continuar</Text>
@@ -33,9 +42,13 @@ export default function Login() {
         <Text style={styles.separatorText}>or</Text>
         <View style={styles.separatorLine} />
       </View>
-      <TouchableOpacity style={styles.button}>
-        <AntDesign style={styles.iconGoogle} name="google" size={24} color="white" />
-        <Text style={styles.textG} > Continuar con Google</Text>
+      <TouchableOpacity style={styles.buttonG}>
+        <AntDesign
+          style={styles.iconGoogle}
+          name="google"
+          size={24}
+          color="white"
+        />
       </TouchableOpacity>
     </View>
   );
@@ -50,13 +63,13 @@ const styles = StyleSheet.create({
     marginTop: 80,
   },
   iconBack: {
-    marginTop: 60,
+    marginTop: 80,
     marginLeft: 10,
   },
   input: {
     fontSize: 15,
     paddingTop: 10,
-    marginTop: 20,
+    marginTop: 50,
     backgroundColor: "white",
     padding: 10,
     fontSize: 15,
@@ -66,15 +79,27 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "black",
-    marginTop: 15,
+    marginLeft: 105,
+    margin: 20,
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 4,
     elevation: 10,
-    width: 300,
-    margin: 50,
+    width: 200,
+  },
+  buttonG: {
+    backgroundColor: "black",
+    marginTop: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 4,
+    elevation: 10,
+    width: 250,
+    marginLeft: 80,
   },
   textC: {
     fontSize: 15,
@@ -102,7 +127,18 @@ const styles = StyleSheet.create({
   textG: {
     color: "white",
   },
-  iconGoogle:{
-    
-  }
+  conteinerTextWelcome: {
+    marginLeft: 160,
+    marginTop: 50,
+  },
+  iconUser: {
+    marginLeft: 30,
+    marginVertical: 10,
+    alignItems: "center",
+    width: "80%",
+  },
+  textWelcome: {
+    fontSize: 18,
+    letterSpacing: 0.25,
+  },
 });
