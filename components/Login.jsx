@@ -5,6 +5,8 @@ import {
   TouchableOpacity,
   TextInput,
   Pressable,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import React from "react";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
@@ -14,43 +16,49 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 export default function Login() {
   const navigation = useNavigation();
 
+  const closeInput = () => {
+    Keyboard.dismiss(); 
+  }
+
   return (
-    <View style={styles.conteiner}>
-      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-        <MaterialIcons
-          style={styles.iconBack}
-          name="arrow-back-ios-new"
-          size={30}
-          color="black"
-        />
-      </TouchableOpacity>
-      <View style={styles.conteinerTextWelcome}>
-        <AntDesign
-          style={styles.iconUser}
-          name="user"
-          size={24}
-          color="black"
-        />
-        <Text style={styles.textWelcome}>Bienvenido</Text>
+    <TouchableWithoutFeedback onPress={closeInput}>
+      <View style={styles.conteiner}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <MaterialIcons
+            style={styles.iconBack}
+            name="arrow-back-ios-new"
+            size={30}
+            color="black"
+          />
+        </TouchableOpacity>
+        <View style={styles.conteinerTextWelcome}>
+          <AntDesign
+            style={styles.iconUser}
+            name="user"
+            size={24}
+            color="black"
+          />
+          <Text style={styles.textWelcome}>Bienvenido</Text>
+        </View>
+        <TextInput style={styles.input} placeholder="Email" />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.textC}>Continuar</Text>
+        </TouchableOpacity>
+        <View style={styles.separatorContainer}>
+          <View style={styles.separatorLine} />
+          <Text style={styles.separatorText}>or</Text>
+          <View style={styles.separatorLine} />
+        </View>
+        <TouchableOpacity style={styles.buttonG}>
+          <AntDesign
+            style={styles.iconGoogle}
+            name="google"
+            size={24}
+            color="white"
+          />
+        </TouchableOpacity>
       </View>
-      <TextInput style={styles.input} placeholder="Email" />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.textC}>Continuar</Text>
-      </TouchableOpacity>
-      <View style={styles.separatorContainer}>
-        <View style={styles.separatorLine} />
-        <Text style={styles.separatorText}>or</Text>
-        <View style={styles.separatorLine} />
-      </View>
-      <TouchableOpacity style={styles.buttonG}>
-        <AntDesign
-          style={styles.iconGoogle}
-          name="google"
-          size={24}
-          color="white"
-        />
-      </TouchableOpacity>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 
