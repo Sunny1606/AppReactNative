@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     position: "absolute", // Coloca la lista en una posición absoluta
     top: 30, // Ajusta la posición vertical de la lista
     left: 0, // Ajusta la posición horizontal de la lista
-    backgroundColor: "#E4C59E",
+    backgroundColor: "#f5cba7",
     borderRadius: 5,
     elevation: 5, // Para agregar una sombra en Android
     width: 250,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
   listItemText: {
     fontSize: 17,
-    backgroundColor: "#AF8260",
+    backgroundColor: "beige",
     padding: 5,
     borderRadius: 5,
   },
